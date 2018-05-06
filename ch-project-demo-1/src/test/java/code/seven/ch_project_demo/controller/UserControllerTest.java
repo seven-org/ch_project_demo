@@ -1,7 +1,5 @@
 package code.seven.ch_project_demo.controller;
 
-
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,19 +17,19 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class UserControllerTest {
-    @Autowired
-    private WebApplicationContext wac;
-    private MockMvc mockMvc;
+	@Autowired
+	private WebApplicationContext wac;
+	private MockMvc mockMvc;
 
-    @Before
-    public void setUp() throws Exception {
-        mockMvc = MockMvcBuilders.webAppContextSetup(wac).build(); //初始化MockMvc对象
-    }
+	@Before
+	public void setUp() throws Exception {
+		mockMvc = MockMvcBuilders.webAppContextSetup(wac).build(); // 初始化MockMvc对象
+	}
 
-    @Test
-    public void getUsers() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/v1/sysUsers")
-                .accept(MediaType.APPLICATION_JSON_UTF8)).andDo(print());
-    }
+	@Test
+	public void getUsers() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.get("/v1/sysUsers").accept(MediaType.APPLICATION_JSON_UTF8))
+				.andDo(print());
+	}
 
 }
